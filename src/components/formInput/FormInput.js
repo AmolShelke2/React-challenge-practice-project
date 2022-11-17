@@ -16,8 +16,23 @@ const FormInput = props => {
     setUserAgeInput(e.target.value);
   };
 
+  const validateUserName = userName => {
+    if (userName === '') {
+      alert('Add a userName');
+    }
+  };
+
+  const validateUserAge = userAge => {
+    if (userAge < 0 || userAge > 100) {
+      alert('Add a valid age');
+    }
+  };
+
   const UserAddHandler = e => {
     e.preventDefault();
+
+    validateUserName(userNameInput);
+    validateUserAge(+userAgeInput);
 
     const newUserData = {
       name: userNameInput,
