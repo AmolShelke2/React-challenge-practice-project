@@ -4,7 +4,7 @@ import './FormInput.css';
 
 import Button from '../Button';
 
-const FormInput = () => {
+const FormInput = props => {
   const [userNameInput, setUserNameInput] = useState('');
   const [userAgeInput, setUserAgeInput] = useState('');
 
@@ -13,13 +13,21 @@ const FormInput = () => {
   };
 
   const onUserAgeChangeHandler = e => {
-    const ageInNumber = +e.target.value;
-    setUserAgeInput(ageInNumber);
+    setUserAgeInput(e.target.value);
   };
 
   const UserAddHandler = e => {
     e.preventDefault();
-    console.log('Form submitted');
+
+    const newUserData = {
+      name: userNameInput,
+      age: +userAgeInput,
+      id: Math.random().toString(),
+    };
+
+    props.onAddNewUser(newUserData);
+    setUserNameInput('');
+    setUserAgeInput('');
   };
 
   return (
