@@ -1,0 +1,15 @@
+.buttton-container {
+        height: 3rem;
+}
+
+.button {
+        border: none;
+        height: 3rem;
+        width: 8rem;
+        border-radius: 12px;
+        cursor: pointer;
+        background-color: #ccc;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: capitalize;
+}

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import './FormInput.css';
 
+import Button from '../Button';
+
 const FormInput = () => {
   const [userNameInput, setUserNameInput] = useState('');
   const [userAgeInput, setUserAgeInput] = useState('');
@@ -39,9 +41,7 @@ const FormInput = () => {
           onChange={onUserAgeChangeHandler}
         />
       </div>
-      <button type="submit" onSubmit={UserAddHandler}>
-        Add user
-      </button>
+      <Button onSubmit={UserAddHandler} />
     </form>
   );
 };

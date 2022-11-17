@@ -13,7 +13,7 @@ form {
 
 .form-inputs input {
         padding: .5rem;
-        width: 80rem;
+        width: 50rem;
         height: 4rem;
         margin-bottom: 1rem;
         border-radius: 3px;
@@ -28,4 +28,10 @@ form {
 .form-inputs label {
         font-size: 1rem;
         margin-bottom: 1rem;
+}
+
+@media (max-width: 1000px) {
+        .form-inputs input {
+                width: 30rem;
+        }
 }
