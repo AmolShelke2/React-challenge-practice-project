@@ -9,6 +9,12 @@ const inital_state = [
     age: 18,
     id: 'u1',
   },
+
+  {
+    name: 'max',
+    age: 16,
+    id: 'u2',
+  },
 ];
 
 function App() {

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './usersList.css';
+
 export const UsersList = props => {
   console.log(props);
 

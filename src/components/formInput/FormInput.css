@@ -35,3 +35,9 @@ form {
                 width: 30rem;
         }
 }
+
+@media (max-width: 500px) {
+        .form-inputs input {
+                width: 20rem;
+        }
+}
