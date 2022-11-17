@@ -1,38 +1,47 @@
 import React, { useState } from 'react';
 
-const FormInput = () => {
-  const initial_state = {
-    name: '',
-    age: '',
-  };
+import './FormInput.css';
 
-  const [userInput, setUserInput] = useState(initial_state);
+const FormInput = () => {
+  const [userNameInput, setUserNameInput] = useState('');
+  const [userAgeInput, setUserAgeInput] = useState('');
 
   const onUserNameChangeHandler = e => {
-    console.log(e.target.value);
+    setUserNameInput(e.target.value);
   };
 
   const onUserAgeChangeHandler = e => {
-    console.log(e.target.value);
+    const ageInNumber = +e.target.value;
+    setUserAgeInput(ageInNumber);
+  };
+
+  const UserAddHandler = e => {
+    e.preventDefault();
+    console.log('Form submitted');
   };
 
   return (
-    <form className="form-control" style={{ textAlign: 'center' }}>
-      <label>UserName</label>
-      <input
-        type="text"
-        value={userInput.name}
-        placeholder="Enter your name"
-        onChange={onUserNameChangeHandler}
-      />
+    <form className="form-control" onSubmit={UserAddHandler}>
+      <div className="form-inputs">
+        <label>UserName</label>
+        <input
+          type="text"
+          value={userNameInput}
+          placeholder="Enter your name"
+          onChange={onUserNameChangeHandler}
+        />
 
-      <label>Age(In number)</label>
-      <input
-        type="number"
-        value={userInput.age}
-        placeholder="Enter your age"
-        onChange={onUserAgeChangeHandler}
-      />
+        <label>Age(In number)</label>
+        <input
+          type="number"
+          value={userAgeInput}
+          placeholder="Enter your age"
+          onChange={onUserAgeChangeHandler}
+        />
+      </div>
+      <button type="submit" onSubmit={UserAddHandler}>
+        Add user
+      </button>
     </form>
   );
 };

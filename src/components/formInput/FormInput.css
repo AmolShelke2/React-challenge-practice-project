@@ -1,0 +1,31 @@
+form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+}
+
+.form-inputs {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+}
+
+.form-inputs input {
+        padding: .5rem;
+        width: 80rem;
+        height: 4rem;
+        margin-bottom: 1rem;
+        border-radius: 3px;
+        border: 2px solid #ccc;
+}
+
+
+.form-inputs input::placeholder {
+        font-size: 1rem;
+}
+
+.form-inputs label {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+}
