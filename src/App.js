@@ -1,7 +1,13 @@
 import React from 'react';
 
+import FormInput from './components/formInput';
+
 function App() {
-  return <div></div>;
+  return (
+    <div>
+      <FormInput />
+    </div>
+  );
 }
 
 export default App;
