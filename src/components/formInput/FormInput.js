@@ -18,12 +18,14 @@ const FormInput = props => {
 
   const validateUserName = userName => {
     if (userName === '') {
+      setUserNameInput('');
       alert('Add a userName');
     }
   };
 
   const validateUserAge = userAge => {
     if (userAge < 0 || userAge > 100) {
+      setUserAgeInput('');
       alert('Add a valid age');
     }
   };
