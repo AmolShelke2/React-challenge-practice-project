@@ -1,35 +1,7 @@
-import React, { useState } from 'react';
-
-import FormInput from './components/formInput';
-import UsersList from './components/usersList';
-
-const inital_state = [
-  {
-    name: 'Amol Shelke',
-    age: 18,
-    id: 'u1',
-  },
-];
+import React from 'react';
 
 function App() {
-  const [users, setUsers] = useState(inital_state);
-
-  const addNewUserHandler = newUser => {
-    console.log(newUser);
-    if (newUser.name === '' && newUser.age === 0) {
-      alert('Add a valid user');
-    }
-    setUsers(prevUsers => {
-      return [newUser, ...prevUsers];
-    });
-  };
-
-  return (
-    <div>
-      <FormInput onAddNewUser={addNewUserHandler} />
-      <UsersList users={users} />
-    </div>
-  );
+  return <h1>Hello world</h1>;
 }
 
 export default App;
