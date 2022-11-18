@@ -16,6 +16,9 @@ function App() {
 
   const addNewUserHandler = newUser => {
     console.log(newUser);
+    if (newUser.name === '' && newUser.age === 0) {
+      alert('Add a valid user');
+    }
     setUsers(prevUsers => {
       return [newUser, ...prevUsers];
     });
