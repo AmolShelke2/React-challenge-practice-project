@@ -8,6 +8,7 @@ html {
 
 body {
   margin: 0;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
