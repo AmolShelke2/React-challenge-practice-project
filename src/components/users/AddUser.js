@@ -1,21 +1,26 @@
 import React from 'react';
+import Card from '../UI/Card';
 
-const AddUser = () => {
+import './AddUser.css';
+
+const AddUser = props => {
   const addUserHandler = e => {
     e.preventDefault();
   };
 
   return (
-    <form className="form-control" onSubmit={addUserHandler}>
-      <div className="form-inputs">
-        <label htmlFor="username">UserName</label>
-        <input placeholder="Enter your name" id="username" />
+    <Card>
+      <form className="form" onSubmit={addUserHandler}>
+        <div className="formInputs">
+          <label htmlFor="username">UserName</label>
+          <input placeholder="Enter your name" id="username" />
 
-        <label htmlFor="userAge">Age(In Years)</label>
-        <input type="number" placeholder="Enter your age" id="userAge" />
-      </div>
-      <button type="submit">Add user</button>
-    </form>
+          <label htmlFor="userAge">Age(In Years)</label>
+          <input type="number" placeholder="Enter your age" id="userAge" />
+        </div>
+        <button type="submit">Add user</button>
+      </form>
+    </Card>
   );
 };
 
