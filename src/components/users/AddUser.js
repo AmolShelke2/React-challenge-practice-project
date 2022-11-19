@@ -1,11 +1,16 @@
 import React from 'react';
 import Card from '../UI/Card';
+import Button from '../UI/Button';
 
 import './AddUser.css';
 
 const AddUser = props => {
   const addUserHandler = e => {
     e.preventDefault();
+  };
+
+  const clickHandler = () => {
+    console.log('button clicked');
   };
 
   return (
@@ -18,7 +23,7 @@ const AddUser = props => {
           <label htmlFor="userAge">Age(In Years)</label>
           <input type="number" placeholder="Enter your age" id="userAge" />
         </div>
-        <button type="submit">Add user</button>
+        <Button onClick={clickHandler} />
       </form>
     </Card>
   );
