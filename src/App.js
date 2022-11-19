@@ -1,7 +1,9 @@
 import React from 'react';
 
+import AddUser from './components/users/AddUser';
+
 function App() {
-  return <h1>Hello world</h1>;
+  return <AddUser />;
 }
 
 export default App;
