@@ -18,7 +18,17 @@ const AddUser = props => {
 
   const addUserHandler = e => {
     e.preventDefault();
+    if (userNameInput.trim().length === 0 || userAgeInput.trim().length === 0) {
+      return;
+    }
+
+    if (+userAgeInput < 1) {
+      return;
+    }
+
     console.log(userNameInput, userAgeInput);
+    setUserNameInput('');
+    setUserAgeInput('');
   };
 
   return (
@@ -30,6 +40,7 @@ const AddUser = props => {
             placeholder="Enter your name"
             id="username"
             onChange={userNameChangeHandler}
+            value={userNameInput}
           />
 
           <label htmlFor="userAge">Age(In Years)</label>
@@ -37,6 +48,7 @@ const AddUser = props => {
             type="number"
             placeholder="Enter your age"
             id="userAge"
+            value={userAgeInput}
             onChange={userAgeChangeHandler}
           />
         </div>
