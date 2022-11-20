@@ -9,15 +9,16 @@ const AddUser = props => {
   const [userAgeInput, setUserAgeInput] = useState('');
 
   const userNameChangeHandler = event => {
-    console.log(event);
+    setUserNameInput(event.target.value);
   };
 
   const userAgeChangeHandler = event => {
-    console.log(event);
+    setUserAgeInput(event.target.value);
   };
 
   const addUserHandler = e => {
     e.preventDefault();
+    console.log(userNameInput, userAgeInput);
   };
 
   return (
