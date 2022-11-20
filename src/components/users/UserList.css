@@ -1,0 +1,13 @@
+.user-lists {
+        list-style-type: none;
+        padding: 1rem;
+}
+
+.user-lists li {
+        background-color: #ccc;
+        padding: .1rem .1rem;
+        border-radius: 5px;
+        color: #000;
+        font-size: 1rem;
+        margin-bottom: .4rem;
+}
