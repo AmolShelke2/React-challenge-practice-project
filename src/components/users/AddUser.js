@@ -6,8 +6,13 @@ import './AddUser.css';
 
 const AddUser = props => {
   const [userNameInput, setUserNameInput] = useState('');
+  const [userAgeInput, setUserAgeInput] = useState('');
 
   const userNameChangeHandler = event => {
+    console.log(event);
+  };
+
+  const userAgeChangeHandler = event => {
     console.log(event);
   };
 
@@ -27,7 +32,12 @@ const AddUser = props => {
           />
 
           <label htmlFor="userAge">Age(In Years)</label>
-          <input type="number" placeholder="Enter your age" id="userAge" />
+          <input
+            type="number"
+            placeholder="Enter your age"
+            id="userAge"
+            onChange={userAgeChangeHandler}
+          />
         </div>
         <Button onClick={addUserHandler} type="submit">
           Add User
