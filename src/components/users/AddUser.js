@@ -19,10 +19,12 @@ const AddUser = props => {
   const addUserHandler = e => {
     e.preventDefault();
     if (userNameInput.trim().length === 0 || userAgeInput.trim().length === 0) {
+      console.error('Add a valid user input');
       return;
     }
 
     if (+userAgeInput < 1) {
+      console.error('Add a valid user Age');
       return;
     }
 
