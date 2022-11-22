@@ -8,7 +8,8 @@ import './AddUser.css';
 const AddUser = props => {
   const [userNameInput, setUserNameInput] = useState('');
   const [userAgeInput, setUserAgeInput] = useState('');
-  const [isErrorModalActive, setIsErrorModelActive] = useState(false);
+
+  const [error, setError] = useState();
 
   const userNameChangeHandler = event => {
     setUserNameInput(event.target.value);
@@ -18,15 +19,25 @@ const AddUser = props => {
     setUserAgeInput(event.target.value);
   };
 
+  const errorHandler = () => {
+    setError(null);
+  };
+
   const addUserHandler = e => {
     e.preventDefault();
     if (userNameInput.trim().length === 0 || userAgeInput.trim().length === 0) {
-      console.error('Add a valid user input');
+      setError({
+        errorTitle: 'Invalid input',
+        errorMessage: 'Please add a valid input value not an empty input',
+      });
       return;
     }
 
     if (+userAgeInput < 1) {
-      console.error('Add a valid user Age');
+      setError({
+        errorTitle: 'Invalid Aget',
+        errorMessage: 'Please add a valid Age input value (age > 0)',
+      });
       return;
     }
 
@@ -37,10 +48,13 @@ const AddUser = props => {
 
   return (
     <div>
-      <ErrorModal
-        errorTitle="An error occured!"
-        errorMessage="something went wrong!"
-      />
+      {error && (
+        <ErrorModal
+          errorTitle={error.errorTitle}
+          errorMessage={error.errorMessage}
+          onConfirm={errorHandler}
+        />
+      )}
 
       <Card>
         <form className="form" onSubmit={addUserHandler}>
