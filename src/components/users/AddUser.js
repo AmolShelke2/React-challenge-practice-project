@@ -8,6 +8,7 @@ import './AddUser.css';
 const AddUser = props => {
   const [userNameInput, setUserNameInput] = useState('');
   const [userAgeInput, setUserAgeInput] = useState('');
+  const [isErrorModalActive, setIsErrorModelActive] = useState(false);
 
   const userNameChangeHandler = event => {
     setUserNameInput(event.target.value);
