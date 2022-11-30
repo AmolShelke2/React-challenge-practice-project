@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+
+import { createPortal } from 'react-dom';
 
 import Button from './Button';
 import Card from './Card';
@@ -29,12 +30,12 @@ const ModelOverlay = props => {
 const ErrorModal = props => {
   return (
     <React.Fragment>
-      {ReactDOM.createPortal(
+      {createPortal(
         <BackDrop onConfirm={props.onConfirm} />,
         document.getElementById('backdrop-root'),
       )}
       ,
-      {ReactDOM.createPortal(
+      {createPortal(
         <ModelOverlay
           errorTitle={props.errorTitle}
           errorMessage={props.errorMessage}
