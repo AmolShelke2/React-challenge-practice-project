@@ -7,3 +7,5 @@ This is a challenge project from the complete react guide course. On the basis o
 - HTML
 - CSS
 - ReactJS.
+
+## Preview
